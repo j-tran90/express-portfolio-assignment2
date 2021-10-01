@@ -1,0 +1,169 @@
+/* 
+Assignment 1 John Tran 301165631 October 2021
+*/
+
+body {
+  color: white;
+  background-color: #181818;
+}
+a {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  color: white;
+  font-size: 15pt;
+  background-color: #9b9292;
+}
+
+.pageTitle {
+  padding-top: 15%;
+  color: #A0DAA9;
+  font-size: 5vw;
+  letter-spacing: 15px;
+}
+
+/* home page animation scheme */
+.homeTitle {
+  animation-delay: 4s;
+  animation: color-change 6s;
+}
+
+@keyframes color-change {
+  0% { color: #181818; }
+  10% { color: #181818; }
+  25% { color: #9b9292; }
+  50% { color: white; }
+  75% { color:  #A0DAA9 ; }
+  100% { color: #A0DAA9; }
+}
+
+/* button effects */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.button1 {
+  background-color: #ecde59; 
+  color: black; 
+  font-weight: bolder;
+  border: 2px solid black;
+  border-radius: 10px;
+  animation-name: slideUp-animation;
+  animation-duration: 4s;
+}
+
+.button1:hover {
+  background-color:#A0DAA9;
+  color: white;
+}
+
+@keyframes slideUp-animation {
+  0%   {top: 200px}
+  100% {top: 0px;}
+}
+/* end of button */
+
+.content {
+  width: auto;
+  height: auto;
+  position: relative;
+  left: 0px;
+  animation: slideIn 0.5s backwards;
+}
+
+/* slide animation for content */
+@keyframes slideIn {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.content-body {
+  background-color: #1c221d;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.aboutme {
+  min-width: 300px;
+  min-height: 333px;
+  max-height: 333px;
+  background-color: #1c221d;
+  padding: 20px;
+  border-radius: 10px;
+  contain: strict;
+  font-size: 0.5vw;
+  font-size: 15px;
+}
+
+/* social media icons */
+.socialmedia {
+  font-size: 5vw;
+}
+
+.fa-twitter-square {
+  color: #55ACEE;
+}
+.fa-instagram {
+  color: rgb(255, 0, 149);
+}
+.fa-facebook-square {
+  color: rgb(0, 65, 163);
+}
+.fa-linkedin {
+  color: #007bb5;
+}
+.fa-youtube {
+  color: #bb0000;
+}
+
+/* for services page */
+.card-text {
+  padding: 10%;
+  color: #252525;
+  font-size: 40px;
+  font-weight: bolder;
+  min-width: 300px;
+  min-height: 333px;
+  max-height: 333px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  border-radius: 10px;
+  contain: strict;
+}
+
+/* carousel */
+.container-fluid {
+  border-radius: 10px;
+}
+

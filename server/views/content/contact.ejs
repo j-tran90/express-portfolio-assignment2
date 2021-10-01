@@ -1,0 +1,52 @@
+<!--  Assignment 1 John Tran 301165631 October 2021 -->
+<div class="">
+    <h1 class="pageTitle"><%= title %></h1>
+    
+    <!--  my info -->
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="content-body"><h4>
+                John Tran
+                <br>
+                jtran73@my.centennialcollege.ca
+                <br>
+                </p></h4>
+            </div>
+            <div class="socialmedia">
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+    
+          <!-- services form -->
+          <div class="col">
+            <form method="POST" class="content-body">
+                <div><h4>Submit a service request</h4></div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="services">Select our services</label>
+                  <select class="form-control" id="options">
+                    <option>--- Options ---</option>
+                    <option>Web Application Development</option>
+                    <option>Software Development</option>
+                    <option>UX/UI Design</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="instructions">Additional instructions</label>
+                  <textarea class="form-control" id="instructions" rows="3"></textarea>
+                  <div class="col-auto">
+                      <button type="submit" class="button1"><a class="nav-link active" href="/home">Submit</a></button>
+                  </div>
+                </div>
+              </form>    
+          </div>
+        </div>
+    </div>
