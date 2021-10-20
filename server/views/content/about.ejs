@@ -1,25 +1,24 @@
 <!--  Assignment 1 John Tran 301165631 October 2021 -->
 
 <div class="content">
-<h1 class="pageTitle"><%= title %></h1>
+  <h1 class="pageTitle"><%= title %></h1>
 
-<!-- columns -->
-<div class="container">
+  <!-- columns -->
+  <div class="container">
     <div class="row">
       <div class="col-sm">
         <div class="card-text" style="background-image: url('./images/portrait.jpg');"></div>
       </div>
       <div class="col-sm">
-          <div class="aboutme">
-            Hello, my name is <strong>John Tran</strong> and I am attending Centennial College for Software Engineering Technician.
-            I used to live in Toronto, but now I live in Windsor, ON. I have worked as a broker in the Property & Casualty insurance for 5 years now. The insurance industry is quickly transitioning towards technology for their business operations. They are relying heavily on technology to generate the algorithm they need. My goal is to become Software Developer for a tech firm, a gaming company, or perhaps for the automotive industry.
-          </div>
+        <div class="aboutme">
+        <%- include('inner_content/about_txt') %>
+        </div>
       </div>
       <div class="col-sm-4">
         <div class="card-text" style="background-image: url('./images/resume.png');">
-            <a href="/images/resume-john_tran.pdf" download>Download My Resume!</a>
-      </div></div>
+          <a href="/images/resume-john_tran.pdf" download>Download My Resume!</a>
+        </div>
       </div>
     </div>
-  </div>  
-                
+  </div>
+</div>

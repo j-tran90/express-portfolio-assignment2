@@ -1,6 +1,7 @@
 <!--  Assignment 1 John Tran 301165631 October 2021 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,15 +11,16 @@
     <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
-    </head>
+</head>
+
 <body>
-    <!-- Main Navigation Section --> 
+    <!-- Main Navigation Section -->
     <%- include('partials/header.ejs'); %>
 
 
     <!-- Content Section -->
     <div class="container">
-        <%- include('content/' + page + '.ejs'); %>
+    <%- include('content/' + page + '.ejs'); %>  
     </div>
 
 
@@ -33,4 +35,5 @@
     <%- include('partials/footer.ejs'); %>
 
 </body>
+
 </html>

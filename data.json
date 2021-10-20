@@ -1,0 +1,11 @@
+{
+    "games":
+    [
+        {"name": "John Doe", "phone": "123-4567", "email": "jdoe@email.com"},
+        {"name": "Jane Smith", "phone": "987-6543", "email": "jane.s@email.com"},
+        {"name": "Billy Boy", "phone": "147-8523", "email": "billyboy@email.com"},
+        {"name": "Thomas Shelby", "phone": "963-8521", "email": "tshelby@email.com"},
+        {"name": "Mario Kart", "phone": "852-1478", "email": "mmmariooo@email.com"},
+        {"name": "Pika Chu", "phone": "789-6541", "email": "pokeball@email.com"}
+    ]
+}

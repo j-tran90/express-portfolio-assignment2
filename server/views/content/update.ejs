@@ -1,0 +1,42 @@
+<!--  Assignment 1 & 2 John Tran 301165631 October 2021 -->
+<!--  update form -->
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.151);">
+                    <div class="card-body p-5 text-center">
+                        <h1 class="display-4">
+                            <i class="fas fa-user-edit"></i>
+                            Update Contact</h1>
+                        <hr class="my-4">
+                        <div>
+                            <form class="form" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your full name"
+                                        name="name" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="text" class="form-control" id="email" placeholder="example@email.com"
+                                        name="email" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="phone" class="form-control" id="phone" placeholder="_ _ _ - _ _ _ _"
+                                        name="phone" value="">
+                                </div>
+                                <hr class="my-4">
+                                <div class="text-right">
+                                    <a href="/update/:id" button id="submitButton" type="submit" class="btn btn-primary btn-lg"><i
+                                            class="fas fa-save"></i> Save</a>
+                                            <a href="/business-list" class="btn btn-danger btn-lg"><i class="fas fa-user-slash"></i> Delete</a>
+                                    <a href="/business-list" id="cancelButton" class="btn btn-warning btn-lg"><i
+                                            class="fas fa-undo-alt"></i> Cancel</a>
+                                </div>
+                        </div>
+                        </form>
+                    </div>

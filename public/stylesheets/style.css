@@ -1,11 +1,12 @@
 /* 
-Assignment 1 John Tran 301165631 October 2021
+Assignment 1&2 John Tran 301165631 October 2021
 */
 
 body {
   color: white;
   background-color: #181818;
 }
+
 a {
   color: white;
 }
@@ -43,19 +44,22 @@ a:hover {
 }
 
 @keyframes color-change {
-  0% { color: #181818; }
-  10% { color: #181818; }
-  25% { color: #9b9292; }
-  50% { color: white; }
-  75% { color:  #A0DAA9 ; }
-  100% { color: #A0DAA9; }
+  0% {
+    color: rgba(255, 255, 255, 0);
+  }
+
+  75% {
+    color: white;
+  }
+
+  100% {
+    color: #A0DAA9;
+  }
 }
 
 /* button effects */
 .button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
+  color: black;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -71,24 +75,46 @@ a:hover {
 }
 
 .button1 {
-  background-color: #ecde59; 
-  color: black; 
+  border: none;
+  background-color: #ecde59;
+  color: black;
   font-weight: bolder;
-  border: 2px solid black;
   border-radius: 10px;
+}
+
+.button2 {
+  border: none;
+  background-color: #525252;
+  color: black;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+.button-delete {
+  background-color: red;
+}
+
+.button1:hover,
+.button2:hover {
+  background-color: #A0DAA9;
+  color: white;
+}
+
+.slideUp {
   animation-name: slideUp-animation;
   animation-duration: 4s;
 }
 
-.button1:hover {
-  background-color:#A0DAA9;
-  color: white;
+@keyframes slideUp-animation {
+  0% {
+    top: 200px
+  }
+
+  100% {
+    top: 0px;
+  }
 }
 
-@keyframes slideUp-animation {
-  0%   {top: 200px}
-  100% {top: 0px;}
-}
 /* end of button */
 
 .content {
@@ -104,6 +130,7 @@ a:hover {
   0% {
     transform: translateX(300px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -134,24 +161,38 @@ a:hover {
 
 .fa-twitter-square {
   color: #55ACEE;
+  font-size: 5vw;
+
 }
+
 .fa-instagram {
   color: rgb(255, 0, 149);
+  font-size: 5vw;
 }
+
 .fa-facebook-square {
   color: rgb(0, 65, 163);
+  font-size: 5vw;
 }
+
 .fa-linkedin {
   color: #007bb5;
+  font-size: 5vw;
 }
+
 .fa-youtube {
   color: #bb0000;
+  font-size: 5vw;
+}
+
+.fa-youtube:hover {
+  color: white;
 }
 
 /* for services page */
 .card-text {
   padding: 10%;
-  color: #252525;
+  color: #525252;
   font-size: 40px;
   font-weight: bolder;
   min-width: 300px;
@@ -167,3 +208,7 @@ a:hover {
   border-radius: 10px;
 }
 
+/*table*/
+.table {
+  color: #fff;
+}
