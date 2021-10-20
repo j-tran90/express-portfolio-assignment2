@@ -2,7 +2,7 @@
 /**
  * Assignment 2 John Tran 301165631 October 2021
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
+let __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -19,8 +19,8 @@ function requireAuth(req, res, next) {
 }
 exports.requireAuth = requireAuth;
 router.get('/business-list', requireAuth, business_1.DisplayBusinessListPage);
-router.get('/update', requireAuth, business_1.DisplayUpdatePage);
-router.post('/update/:id', requireAuth, business_1.processUpdateContact);
-router.get('/delete/:id', requireAuth, business_1.performDelete);
-module.exports = router;
+router.get('/update/:id', requireAuth, business_1.DisplayUpdatePage);
+router.post('/update/:id', requireAuth, business_1.ProcessUpdatePage);
+router.get('/delete/:id', requireAuth, business_1.PerformDelete);
+//module.exports = router;
 //# sourceMappingURL=business.js.map

@@ -7,7 +7,7 @@ import express, {Request, Response, NextFunction} from 'express';
 const router = express.Router();
 export default router;
 
-import {DisplayUpdatePage, DisplayBusinessListPage, performDelete, processUpdateContact} from '../controllers/business';
+import {DisplayBusinessListPage, DisplayUpdatePage, PerformDelete, ProcessUpdatePage} from '../controllers/business';
 
 export function requireAuth(req: Request, res: Response, next: NextFunction)
 {
@@ -19,10 +19,10 @@ export function requireAuth(req: Request, res: Response, next: NextFunction)
 }
 router.get('/business-list', requireAuth, DisplayBusinessListPage);
 
-router.get('/update', requireAuth, DisplayUpdatePage);
+router.get('/update/:id', requireAuth, DisplayUpdatePage);
 
-router.post('/update/:id', requireAuth, processUpdateContact)
+router.post('/update/:id', requireAuth, ProcessUpdatePage);
 
-router.get('/delete/:id', requireAuth, performDelete);
+router.get('/delete/:id', requireAuth, PerformDelete);
 
-module.exports = router;
+//module.exports = router;

@@ -4,25 +4,61 @@
 
 import express, {Request, Response, NextFunction} from 'express';
 
-import passport from 'passport';
 import Contacts from '../models/contacts';
 
-export function DisplayUpdatePage(req: Request, res: Response, next: NextFunction): void
+// calls in contact db and renders to user
+export function DisplayBusinessListPage(req: Request, res: Response, next: NextFunction): void 
 {
-    res.render('index', { title: 'Update Contact', page: 'update'  });
+  // db
+  Contacts.find(function (err, contactsCollection)
+  {
+    if (err) 
+    {
+      console.error(err);
+      res.end(err);
+    }
+
+    res.render('index', {title: 'Business List', page: 'business-list', contacts: contactsCollection, displayName: req.user ? req.user.displayName: ''});
+
+  });
 }
 
-export function processUpdateContact(req: Request, res: Response, next: NextFunction): void
+// directed to Update View
+export function DisplayUpdatePage(req: Request, res: Response, next: NextFunction): void
+{
+  let id = req.params.id;
+
+  Contacts.findById(id, (err: any, contactToEdit: any) =>
+  {
+    if (err) 
+    {
+      console.log(err);
+      res.end(err);
+    } 
+    else 
+    {
+      res.render('index', {title: 'Update Page', page: 'update', contacts: contactToEdit, displayName: req.user ? req.user.displayName: ''});
+
+    }
+  });
+}
+
+// process any edit the user done in the Update View
+export function ProcessUpdatePage(req: Request, res: Response, next: NextFunction): void
 {
     let id = req.params.id
 
-    let updatedContact = new Contacts({
-        name: String,
-        email: String,
-        phone: String
+    let newContact = new Contacts
+    ({
+      name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email
+    },
+    {
+        collection: "contacts"
     });
 
-    Contacts.updateOne({_id: id}, updatedContact, (err: any) => {
+    Contacts.updateOne({_id: id}, newContact, (err: any) => {
         if(err)
         {
             console.log(err);
@@ -35,38 +71,21 @@ export function processUpdateContact(req: Request, res: Response, next: NextFunc
     });
 }
 
-export function performDelete(req: Request, res: Response, next: NextFunction): void
+// delete a contact upon user req
+export function PerformDelete(req: Request, res: Response, next: NextFunction): void
 {
-    let id = req.params.id;
+  let id = req.params.id;
 
-    Contacts.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-             res.redirect('/business-list');
-        }
-    });
-}
-
-export function DisplayBusinessListPage(req: Request, res: Response, next: NextFunction): void
-{
-    // db
-    Contacts.find(function(err, contactsCollection)
+  Contacts.remove({_id: id}, (err) =>
   {
-    if(err)
+    if (err)
     {
-      console.error(err);
+      console.log(err);
       res.end(err);
+    } 
+    else 
+    {
+      res.redirect('/business-list');
     }
-
-    res.render('index', { title: 'Business List', page: 'business-list', contacts: contactsCollection  });
-
   });
 }
-
-
-

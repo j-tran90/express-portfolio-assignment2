@@ -7,11 +7,11 @@
         <table class="table table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Edit</th>
+                    <th class="col-1">#</th>
+                    <th class="col-2">Name</th>
+                    <th class="col-1">Phone</th>
+                    <th class="col-2">Email</th>
+                    <th class="col-1">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,7 +21,7 @@
                         <td><%= contacts[count].name %> </td>
                         <td><%= contacts[count].phone %></td>
                         <td><%= contacts[count].email %></td>
-                        <td><button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-user-edit"></i><a href="/update"> Update</a></button>
+                        <td><button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-user-edit"></i><a href="/update/<%= contacts[count]._id %>"> Update</a></button>
                         <a href="/delete/<%= contacts[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-user-slash"></i> Delete</a>
                         </td>
                     </tr>

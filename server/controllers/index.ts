@@ -5,40 +5,36 @@
 import express, {Request, Response, NextFunction} from 'express';
 
 import passport from 'passport';
-
 import User from '../models/user';
-import Contacts from '../models/contacts';
-import { convertTypeAcquisitionFromJson } from 'typescript';
-
 
 export function DisplayHomePage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Home', page: 'home'  });
+    res.render('index', { title: 'Home', page: 'home', displayName: req.user ? req.user.displayName: ''});
 }
 
 export function DisplayAboutPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'About Us', page: 'about'  });
+    res.render('index', { title: 'About Us', page: 'about', displayName: req.user ? req.user.displayName: ''});
 }
 
 export function DisplayProjectsPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Our Projects', page: 'projects'  });
+    res.render('index', { title: 'Our Projects', page: 'projects', displayName: req.user ? req.user.displayName: ''});
 }
 
 export function DisplayServicesPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Our Services', page: 'services'  });
+    res.render('index', { title: 'Our Services', page: 'services', displayName: req.user ? req.user.displayName: ''});
 }
 
 export function DisplayContactPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Contact Us', page: 'contact'  });
+    res.render('index', { title: 'Contact Us', page: 'contact', displayName: req.user ? req.user.displayName: ''});
 }
 
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Login', page: 'login'  });
+    res.render('index', { title: 'Login', page: 'login'});
 }
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void

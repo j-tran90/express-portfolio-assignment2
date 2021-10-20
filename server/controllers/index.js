@@ -2,7 +2,7 @@
 /**
  * Assignment 2 John Tran Fall 2021
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
+let __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -10,23 +10,23 @@ exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.DisplayRegiste
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../models/user"));
 function DisplayHomePage(req, res, next) {
-    res.render('index', { title: 'Home', page: 'home' });
+    res.render('index', { title: 'Home', page: 'home', displayName: req.user ? req.user.displayName : '' });
 }
 exports.DisplayHomePage = DisplayHomePage;
 function DisplayAboutPage(req, res, next) {
-    res.render('index', { title: 'About Us', page: 'about' });
+    res.render('index', { title: 'About Us', page: 'about', displayName: req.user ? req.user.displayName : '' });
 }
 exports.DisplayAboutPage = DisplayAboutPage;
 function DisplayProjectsPage(req, res, next) {
-    res.render('index', { title: 'Our Projects', page: 'projects' });
+    res.render('index', { title: 'Our Projects', page: 'projects', displayName: req.user ? req.user.displayName : '' });
 }
 exports.DisplayProjectsPage = DisplayProjectsPage;
 function DisplayServicesPage(req, res, next) {
-    res.render('index', { title: 'Our Services', page: 'services' });
+    res.render('index', { title: 'Our Services', page: 'services', displayName: req.user ? req.user.displayName : '' });
 }
 exports.DisplayServicesPage = DisplayServicesPage;
 function DisplayContactPage(req, res, next) {
-    res.render('index', { title: 'Contact Us', page: 'contact' });
+    res.render('index', { title: 'Contact Us', page: 'contact', displayName: req.user ? req.user.displayName : '' });
 }
 exports.DisplayContactPage = DisplayContactPage;
 function DisplayLoginPage(req, res, next) {
